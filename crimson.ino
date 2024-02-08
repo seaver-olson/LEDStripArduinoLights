@@ -18,7 +18,7 @@ void setup() {
 
 void loop() {
   if (irrecv.decode(&results)) {
-    unsigned int value = results.value;
+    unsigned long value = results.value;
 
     // Change this value to match the IR code you want to use
     if (value == 0xFFA25D) { // Example IR code
