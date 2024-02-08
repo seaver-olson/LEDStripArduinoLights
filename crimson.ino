@@ -12,6 +12,7 @@ IRrecv irrecv(IR_RECEIVER_PIN);
 decode_results results;
 
 void setup() {
+  Serial.begin(9600);
   FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
   irrecv.enableIRIn(); // Start the receiver
 }
@@ -25,7 +26,7 @@ void loop() {
       // Toggle the LED strip
       toggleLEDStrip();
     }
-    
+    Serial.println(value);
     irrecv.resume(); // Receive the next value
   }
 }
